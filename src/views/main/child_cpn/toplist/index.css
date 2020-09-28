@@ -1,0 +1,38 @@
+.found{
+    margin-bottom:40px;
+}
+.found .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: space-between;
+    width:900px;
+    height:320px;
+    overflow: auto;
+}
+.found .content::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+ 
+.found .content::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #ff5d3d;
+}
+
+.found .contentItem{
+    width:150px;
+    height:150px;
+    margin:0 12px 10px 12px;
+    cursor:pointer;
+    overflow: hidden;
+    border-radius:4px;
+}
+.found img{
+    width:100%;
+    height:100%;
+    border-radius:4px;
+}
+
+

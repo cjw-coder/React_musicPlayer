@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "145451",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "444234",
+      "name": "专辑，光盘",
+      "font_class": "zhuanjiguangpan",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "2767720",
+      "name": "收藏歌单",
+      "font_class": "icon-",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "5640058",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "5964567",
+      "name": "音乐",
+      "font_class": "yinle",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "12099648",
+      "name": "播放",
+      "font_class": "huabanfuben",
+      "unicode": "eb7c",
+      "unicode_decimal": 60284
+    },
+    {
+      "icon_id": "13646166",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "14559728",
+      "name": "播放备份 13",
+      "font_class": "bofangbeifen13",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

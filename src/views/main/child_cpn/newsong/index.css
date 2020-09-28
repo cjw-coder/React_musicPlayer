@@ -1,0 +1,56 @@
+.newsong{
+    margin-top:10px;
+    margin-bottom:30px;
+}
+.newsong .content{
+    width:900px;
+    display: flex;
+    justify-items: space-around;
+    flex-wrap: wrap;
+}
+.newsong .contentItem{
+    overflow: hidden;
+    border:1px solid rgba(125,125,125,0.2);
+    border-radius:4px;
+    width:160px;
+    height:220px;
+    margin:10px;
+    cursor:pointer;
+    box-sizing: border-box;
+}
+.newsong .contentItem:hover{
+    background:rgb(246, 246, 246);
+    transition:1s linear;
+}
+.newsong .content img{
+    width:100%;
+    height:160px;
+    position: relative;
+    left:50%;
+    transform:translate(-50%,0);
+}
+.newsong .contentTxt{
+    padding-left:10px;
+}
+.newsong .contentTxt h4{
+    display: block;
+    overflow: hidden;
+    height:24px;
+}
+.newsong .contentTxt span{
+    color:rgb(125,125,125);
+    font-size:10px;
+}
+.title div{
+    border-top:4px solid #ff5d3d;
+    width:20px;
+}
+.title span{
+    background:#ff5d3d;
+    color:white;
+    font-weight: bold;
+    font-size:14px;
+    border-radius:6px;
+    padding:4px;
+    margin-left:8px;
+}

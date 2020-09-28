@@ -1,0 +1,80 @@
+.player{
+    width:100%;
+    min-width:1500px;
+    margin:0 auto;
+    height:80px;
+    padding:10px 80px 10px 120px;
+    background:#161616;
+    margin-bottom:50px;
+    position: fixed;
+    z-index:1;
+}
+.player h1{
+    color:#fff;
+    font-weight: bold;
+    border-radius:12px;
+    line-height:50px;
+    min-width:100px;
+    display: block;
+    float:left;
+    cursor:pointer;
+}
+.search{
+    float:left;
+}
+.player .circle{
+    max-width:50px;
+    max-height:50px;
+    line-height:50px;
+    border-radius:100%;
+    margin:4px 8px 0 200px;
+    border:1px solid rgba(125,125,125,0.2);
+    float:left;
+    cursor:pointer;
+}
+
+@keyframes circle{
+    from{transition:1s linear}
+    0%   {transform:rotate(0deg)}
+    25%  {transform:rotate(90deg)}
+    50%  {transform:rotate(180deg)}
+    75%  {transform:rotate(270deg)}
+    100% {transform:rotate(360deg)}
+}
+.audioPlayer{
+    padding:16px;
+}
+.audioPlayer *{
+    float:left;
+    color:#fff;
+}
+.audioPlayer .playBtn{
+    height:32px;
+}
+.audioPlayer img{
+    height:30px;
+    left:0;
+    cursor:pointer;
+    padding:0 6px;
+}
+.accessBar{
+    width:250px;
+    height:5px;
+    border-radius:40px;
+    background:rgb(150,150,150);
+    margin-top:12px;
+    margin-left:10px;
+}
+.access{
+    width:0px;
+    height:5px;
+    border-radius:40px;
+    background:#fff;
+}
+.audioPlayer .duration{
+    line-height:25px;
+    padding-left:10px;
+}
+.audioPlayer .sound{
+    padding-left:10px;
+}

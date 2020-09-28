@@ -1,0 +1,16 @@
+.main{
+    padding:0 120px;
+    padding-top:90px;
+}
+.content{
+    display: flex;
+}
+.left{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding:0 40px 0 0;
+}
+.right{
+    width:500px;
+}

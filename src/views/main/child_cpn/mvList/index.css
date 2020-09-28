@@ -1,0 +1,44 @@
+.mvList{
+    width:374px;
+    background:rgba(0,0,0);
+    color:white;
+    font-weight: bold;
+    max-height:1015px;
+    margin-bottom:36px;
+    overflow:hidden;
+}
+
+.mvList video{
+    height:210px;
+    border:0;
+    padding:0px;
+    
+}
+.mvList div{
+    height:80px;
+    padding:12px 24px;
+    box-sizing: border-box;
+    color:rgb(125,125,125);
+    cursor:pointer;
+}
+.mvList div:hover{
+    background:rgb(125,125,125);
+    color:white;
+    transition:0.2s linear;
+}
+.mvList h3{
+    color:white;
+    font-weight: bold;
+    display: block;
+    height:30px;
+    overflow: hidden;
+}
+.mvList span{
+    font-weight: initial;
+    font-size:12px;
+}
+
+.mvList .playCount{
+    float:right;
+    padding-top:4px;
+}

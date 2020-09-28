@@ -1,0 +1,70 @@
+.playList .playlistBars{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:60px;
+}
+.playList .playlistBar{
+    width:200px;
+    background:rgb(0,0,0);
+    color:#fff;
+    height:630px;
+    overflow:hidden;
+    padding-top:18px;
+    box-sizing: border-box;
+    margin:0 10px;
+}
+.playlistBar .title{
+    height:80px;
+    display: flex;
+}
+.playlistBar h1{
+    color:rgb(100,100,100);
+    font-size:50px;
+}
+.playlistBar .title span{
+    padding-top:10px;
+    font-size: 16px;
+    background:none;
+    font-weight: normal;
+}
+
+.playlistBar .item{
+    width:100%;
+    white-space: nowrap;
+    height:75px;
+    display: flex;
+    justify-content: space-between;
+    line-height:10px;
+    cursor:pointer;
+    padding:0 10px;
+}
+.playlistBar .item .artist{
+    color:rgb(125,125,125);
+}
+
+.playlistBar .item:hover{
+    background:rgb(125,125,125);
+    color:white;
+    transition:0.2s linear;
+}
+.playlistBar .item:hover span{
+    color:white;
+}
+
+.playlistBar .item div{
+    width:100%;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.playlistBar .item .artist{
+    line-height:14px;
+    height:30px;
+    white-space: normal;
+    display: block;
+    width:100%;
+    font-size:12px;
+}
+.playlistBar .item .iconfont{
+    padding-top:20px;
+}

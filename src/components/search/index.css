@@ -1,0 +1,41 @@
+.search{
+    width:30%;
+    margin:10px;
+}
+
+.searchSongs{
+    border-left:1px solid rgba(125,125,125,0.2);
+    border-right:1px solid rgba(125,125,125,0.2);
+    max-height: 200px;
+    overflow:auto;
+    position: absolute;
+    z-index:2;
+    background:#fff;
+    width:390px;
+}
+
+.searchSongs::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+ 
+.searchSongs::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #ff5d3d;
+}
+
+.singer{
+    color:rgb(125,125,125);
+    float:right;
+}
+.searchSongs a{
+    height:40px;
+    line-height: 40px;
+    display: block;
+    color:rgb(0,0,0)
+}
+.searchSongs div:hover{
+    background:#F5F5F5;
+}
