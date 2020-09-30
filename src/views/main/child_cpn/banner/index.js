@@ -18,9 +18,10 @@ export default class Banner extends React.Component{
             this.setState({
                 banners:data.banners
             })
-            console.log(this.state.banners)
         })
     }
+
+    //组件卸载前清除网络状态
     componentWillUnmount(){
         this.setState = (state,callback) => {
             return

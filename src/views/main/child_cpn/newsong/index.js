@@ -14,12 +14,12 @@ export default class Right extends React.Component{
     UNSAFE_componentWillMount(){
         api.getNewsong().then(res => res.json())
         .then(data => {
-            console.log(data)
             this.setState({
                 newSong:data.result
             })
         })
     }
+    //组件销毁前清除网络状态
     componentWillUnmount(){
         this.setState = (state,callback) => {
             return

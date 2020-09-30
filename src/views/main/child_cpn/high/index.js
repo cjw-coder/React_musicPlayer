@@ -11,20 +11,22 @@ class High extends React.Component{
             playlists:[]
         }
     }
-    componentWillMount(){
+
+    //组件即将挂载时，调用geiHigh接受请求返回数据
+    UNSAFE_componentWillMount(){
         api.getHigh().then(res => res.json())
         .then(data =>{
-            console.log(data)
             this.setState({
                 playlists:data.playlists
-            },()=>{
-                console.log(this.state.playlists)
             })
         })
     }
+
+    //处理点击事件，跳转到detail组件并传递id作为参数
     handleClick(id){
         this.props.history.push(`/detail?id=${id}`)
     }
+
     render(){
         return(
             <div className="high">

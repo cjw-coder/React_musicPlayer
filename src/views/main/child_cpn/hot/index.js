@@ -10,7 +10,7 @@ class Hot extends React.Component{
             hots:[]
         }
     }
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         api.getHot().then(res => res.json())
         .then(data => {
             if(data.code === 200){

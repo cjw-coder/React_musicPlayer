@@ -42,7 +42,7 @@ class Player extends React.Component{
                                 songName:nextprops.song.album ?nextprops.song.album.name: nextprops.song.name,
                                 isCircle:true
                             },()=>{
-                                //重置进度条宽度和进度条记录
+                                //当接收到新的url时，重置进度条宽度和进度条记录
                                 this.resetWidth()
                             })
                         }
@@ -64,6 +64,7 @@ class Player extends React.Component{
             }
         }
     }
+
     resetWidth(){
         this.setState({
             currentWidth:0,
@@ -71,14 +72,15 @@ class Player extends React.Component{
         })
         this.accessRef.current.style.width=0
     }
+
     //处理onPause()事件
     handlePause = () =>{
         this.setState({
                 isCircle:false,
                 isPlay:false,
-                currentWidth:this.state.accessRate
+                currentWidth:this.state.accessRate                  //记录当前宽度
         })
-        this.accessRef.current.style.width=this.state.accessRate
+        this.accessRef.current.style.width=this.state.accessRate    //修改当前进度条的宽度为记录的长度     
     }
 
     //处理onPlay()
@@ -122,7 +124,8 @@ class Player extends React.Component{
     }
     //处理onTimeUpdate事件，获取当前播放时长
     handleDuration = () =>{
-        if(this.state.currentWidth === 0){
+        if(this.state.currentWidth === 0){              //当前记录宽度为0，就不需要
+            //扩大浮点数数值，防止计算错误
             let firstRate = (250/this.audioRef.current.duration*10000)/10000
             let rate = (this.state.accessRate*10000 + firstRate*10000)/10000
             this.setState({
@@ -145,16 +148,20 @@ class Player extends React.Component{
     }
 
  
-
+    //处理播放按钮点击
     playBtn=()=>{
+        //如果audio的src为空直接返回
         if(this.audioRef.current.currentSrc === ''){
             return false
         }
+
+        //根据当前播放状态的值和audio的src不为空，来确认是否改变播放转态，并调用audio元素的play()或pause()方法
         if(this.state.isPlay === false && this.audioRef.currentSrc !== ''){
             this.setState({
                 isPlay:true
             })
             this.audioRef.current.play()
+        
         }else if(this.state.isPlay === true && this.audioRef.cuurentSrc !== ''){
             this.setState({
                 isPlay:false
@@ -162,36 +169,42 @@ class Player extends React.Component{
             this.audioRef.current.pause()
         }
     }
+    
+    //处理上一首操作，如果当前songArr和imgArr数组的长度均小于2，则直接返回
     handleBack=()=>{
         if(this.state.songArr.length < 2 || this.state.imgArr.length < 2){
             return false
         }
+        //否则就匹配当前播放的下标，并将该下标减一的值赋值给songUrl和imgUrl
         this.state.songArr.forEach((item,index) => {
-            if(item === this.state.songUrl){        //遍历songArr获取当前播放歌曲下标
+            if(item === this.state.songUrl){            //将遍历的值与当前url的值进行匹配，获取对应下标
                 this.setState({
-                    songUrl:this.state.songArr[index--],
-                    imgUrl:this.state.imgArr[index--]
+                    songUrl:this.state.songArr[index-1],
+                    imgUrl:this.state.imgArr[index-1]
                 })
             }
         })
     }
+
+    ////处理下一首操作，如果当前songArr和imgArr数组的长度均小于2，则直接返回
     handleNext=()=>{
         if(this.state.songArr.length < 2 || this.state.imgArr.length < 2){
             return false
         }
+        
+        //否则就匹配当前播放的下标，并将该下标加一的值赋值给songUrl和imgUrl
         this.state.songArr.forEach((item,index)=>{
             if(item === this.state.songUrl){
-                
                 this.setState({
-                    songUrl:this.state.songArr[index++],
-                    imgUrl:this.state.imgArr[index++]
+                    songUrl:this.state.songArr[index+1],
+                    imgUrl:this.state.imgArr[index+1]
                 })
             }
         })
     }
    
+    //是否静音，取反state内的muted，并赋值给audio的muted属性
     handleSound=()=>{
-        console.log(this.audioRef)
         this.setState({
             muted:!this.state.muted
         },()=>{
@@ -199,9 +212,11 @@ class Player extends React.Component{
         })
     }
 
+    //点击logo返回首页
     goIndex=()=>{
         this.props.history.push('/')
     }
+    
     render(){
         //设置动画样式
         const circleStyle = {

@@ -18,11 +18,11 @@ export default class playList extends React.Component{
         }
     }
 
+    //在组件即将挂载时发送请求
     UNSAFE_componentWillMount(){
         api.getDetail('id=745956260').then(res => res.json())
         .then(data => {
             if(data.code === 200){
-                console.log(data)
                 this.setState({
                     korean:data.playlist.tracks,
                     koreanName:data.playlist.name
@@ -32,7 +32,6 @@ export default class playList extends React.Component{
         api.getDetail('id=10520166').then(res => res.json())
         .then(data => {
             if(data.code === 200){
-                console.log(data)
                 this.setState({
                     electron:data.playlist.tracks,
                     electronName:data.playlist.name
@@ -42,7 +41,6 @@ export default class playList extends React.Component{
         api.getDetail('id=2809577409').then(res => res.json())
         .then(data => {
             if(data.code === 200){
-                console.log(data)
                 this.setState({
                     europe:data.playlist.tracks,
                     europeName:data.playlist.name
@@ -53,7 +51,6 @@ export default class playList extends React.Component{
         api.getDetail('id=71385702').then(res => res.json())
         .then(data => {
             if(data.code === 200){
-                console.log(data)
                 this.setState({
                     acg:data.playlist.tracks,
                     acgName:data.playlist.name

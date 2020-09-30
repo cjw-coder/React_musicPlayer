@@ -3,7 +3,10 @@ import api from '@/api'
 import './index.css'
 
 export default function(){
+    
+    //使用hooks中的useEffect和useState实现组件挂载时发送请求，并保存数据到当前函数组件
     const [artists,setArtist] = useState([])
+
     useEffect(() => {
         api.getArtist('limit=10').then(res => res.json())
         .then(data => {
@@ -19,6 +22,7 @@ export default function(){
                     <div className="title">热门歌手</div>
                     <div className="content">
                         {artists.map((item,index) => {
+                            //点击跳转到all组件，并传递keywords和type值
                             return <a href={`/all?keywords=${item.name}&type=1`} key={index} >{item.name}</a>
                         })}
                     </div>

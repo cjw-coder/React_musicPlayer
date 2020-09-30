@@ -21,7 +21,7 @@ export default class List extends React.Component{
         this.props.getSong(params)
     }
 
-    //处理
+    
     render(){
         return(
             <div className="list">
