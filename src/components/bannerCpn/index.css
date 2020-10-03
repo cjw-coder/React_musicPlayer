@@ -1,0 +1,55 @@
+.bannerCpn{
+    width:900px;
+    height:400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerCpn .banner-item{
+    width:9000px;
+    position: absolute;
+}
+
+.bannerCpn .leftPointer{
+    height:65px;
+    width:65px;
+    position: relative;
+    border-radius: 100%;
+    background:rgba(100,100,100,0.5);
+    bottom:-40%;
+    left:10px;
+    transform:translate(0,-50%);
+    float:left;
+    cursor:pointer;
+}
+.bannerCpn .rightPointer{
+    height:65px;
+    width:65px;
+    position: relative;
+    border-radius: 100%;
+    background:rgba(100,100,100,0.5);
+    bottom:-40%;
+    left:825px;
+    transform:translate(0,-50%);
+    cursor:pointer;
+}
+.bannerCpn .leftPointer .pointer{
+    width:30px;
+    height:30px;
+    border-top:3px solid #fff;
+    border-left:3px solid #fff;
+    transform:rotate(-45deg);
+    position: relative;
+    left:24px;
+    bottom:-30%;
+}
+.bannerCpn .rightPointer .pointer{
+    width:30px;
+    height:30px;
+    border-top:3px solid #fff;
+    border-right:3px solid #fff;
+    transform:rotate(45deg);
+    position: relative;
+    right:-10px;
+    bottom:-30%;
+}

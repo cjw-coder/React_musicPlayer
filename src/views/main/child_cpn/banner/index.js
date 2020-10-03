@@ -1,13 +1,14 @@
 import React from 'react'
 import api from '@/api'
-import { Carousel } from 'antd';
 import './index.css'
+import BannerCpn from '@/components/bannerCpn'
 
 export default class Banner extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            banners:[]
+            banners:[],
+            firstItem:{}
         }
     }
 
@@ -16,7 +17,8 @@ export default class Banner extends React.Component{
         api.getBanners('type=0').then(res => res.json())
         .then(data => {
             this.setState({
-                banners:data.banners
+                banners:data.banners,
+                firstItem:data.banners[0]
             })
         })
     }
@@ -50,6 +52,7 @@ export default class Banner extends React.Component{
     }
 
     render(){
+       
         //定义样式
         const contentStyle = {
             height: '400px',
@@ -59,19 +62,26 @@ export default class Banner extends React.Component{
         const imgStyle = {
             width:'900px'
         }
+        
         return(
             <div className="banner">
-                <Carousel autoplay effect='fade'>
-                    {
-                        this.state.banners.map((item) => {
-                            return<a style={contentStyle} key={item.targetId} href={this.getBannerType(item.targetType,item.targetId,item.url)}>
-                                    <img src={item.imageUrl} style={imgStyle} alt={item.typeTitle}></img>
-                                </a>
+                <BannerCpn
+                 bannerItem = {
+                    this.state.banners.map((item) => {
+                        return<a style={contentStyle} key={item.targetId} href={this.getBannerType(item.targetType,item.targetId,item.url)}>
+                                <img src={item.imageUrl} style={imgStyle} alt={item.typeTitle}></img>
+                            </a>
                             
-                        })
-                    }
-                </Carousel>
-            </div> 
+                    })
+                 }
+                 firstItem = {
+                     <a style={contentStyle} key={this.state.firstItem.targetId} 
+                     href={this.getBannerType(this.state.firstItem.targetType,this.state.firstItem.targetId,this.state.firstItem.url)}>
+                         <img src={this.state.firstItem.imageUrl} style={imgStyle} alt={this.state.firstItem.typeTitle}></img>
+                     </a>
+                 }>
+                </BannerCpn>
+            </div>
         )
     }
 }

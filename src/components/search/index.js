@@ -1,8 +1,6 @@
 import React from 'react'
 import api from '@/api'
 import './index.css'
-import {Input} from 'antd'
-const {Search} = Input
 
 export default class SearchInput extends React.Component{
     constructor(props){
@@ -56,12 +54,12 @@ export default class SearchInput extends React.Component{
        </div>:<div></div>
         return(
             <div className="search">
-                <Search
+                 <input type="text"
                  placeholder="搜索"
                  onChange={this.handleChange}
                  onBlur={this.clearSongs}
                  >
-                 </Search>
+                 </input>
                  {showStatus}
             </div>
         )

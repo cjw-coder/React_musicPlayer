@@ -1,9 +1,8 @@
 .player{
-    width:100%;
     min-width:1500px;
     margin:0 auto;
-    height:80px;
-    padding:10px 80px 10px 120px;
+    height:60px;
+    padding:10px 95px;
     background:#161616;
     margin-bottom:50px;
     position: fixed;
@@ -13,7 +12,7 @@
     color:#fff;
     font-weight: bold;
     border-radius:12px;
-    line-height:50px;
+    line-height:10px;
     min-width:100px;
     display: block;
     float:left;
@@ -63,7 +62,6 @@
     border-radius:40px;
     background:rgb(150,150,150);
     margin-top:12px;
-    margin-left:10px;
 }
 .access{
     width:0px;

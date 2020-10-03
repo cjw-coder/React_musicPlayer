@@ -2,7 +2,14 @@
     width:30%;
     margin:10px;
 }
+.search input{
+    width:390px;
+    height:35px;
+    border-radius:5px;
+    border:1px solid rgb(0,0,0);
+    line-height:35px;
 
+}
 .searchSongs{
     border-left:1px solid rgba(125,125,125,0.2);
     border-right:1px solid rgba(125,125,125,0.2);
