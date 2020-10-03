@@ -9,7 +9,7 @@
 
 ### 项目描述
 ```
-基于React框架开发的web音乐播放网站，使用到的相关技术有fetch、react-router、react-hooks、antd等。
+基于React框架开发的web音乐播放网站，使用到的相关技术有fetch、react-router、react-hooks等。
 ```
 
 
